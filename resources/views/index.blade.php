@@ -21,6 +21,7 @@
     <link rel="manifest" href="{{asset('icons/manifest.json')}}">
     <link rel="mask-icon" href="{{asset('icons/safari-pinned-tab.svg')}}" color="#712cf9">
     <link rel="icon" href="{{asset('icons/favicon.ico')}}">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <meta name="theme-color" content="#712cf9">
 
 
