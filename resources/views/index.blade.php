@@ -21,6 +21,7 @@
     <link rel="manifest" href="{{asset('icons/manifest.json')}}">
     <link rel="mask-icon" href="{{asset('icons/safari-pinned-tab.svg')}}" color="#712cf9">
     <link rel="icon" href="{{asset('icons/favicon.ico')}}">
+    <link rel="stylesheet" href="{{ asset('path/to/toastr.min.css') }}">
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <meta name="theme-color" content="#712cf9">
 
@@ -119,6 +120,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
     <script src="{{asset('/js/projeto.js')}}"></script>
     <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="{{ asset('path/to/toastr.min.js') }}"></script>
+    @if(session('toast_success'))
+        <script>
+            toastr.success("{{ session('toast_success') }}");
+        </script>
+    @endif
+        
+
 </body>
 
 </html>
