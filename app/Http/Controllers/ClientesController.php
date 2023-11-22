@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\FormRequestClientes;
 use App\Models\Cliente;
 use App\Models\Componentes;
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 
 class ClientesController extends Controller
@@ -47,22 +48,20 @@ class ClientesController extends Controller
         return view('pages.clientes.create');
     }
 
-    public function atualizarCliente(Request $request, $id) 
+    public function atualizarCliente(FormRequestClientes $request, $id) 
     {
 
         if($request->method() == "PUT"){
 
             $data = $request->all();
-            $componentes = new Componentes();
-            $data['valor'] = $componentes->formatacaoMascaraDinheiroDecimal($data['valor']);
             
             $buscaRegistro = Cliente::find($id);
             $buscaRegistro->update($data);
 
-            return redirect()->route('produto.index');
+            return redirect()->route('clientes.index');
         }
 
-        $findProduto = Cliente::where('id', '=', $id)->first();
-        return view('pages.clientes.atualiza', compact('findProduto'));
+        $findCliente = Cliente::where('id', '=', $id)->first();
+        return view('pages.clientes.atualiza', compact('findCliente'));
     }
 }

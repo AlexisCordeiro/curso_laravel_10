@@ -38,7 +38,7 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Endereço</label>
-            <input value='{{old('endereco')}}' class="form-control @error('endereco')
+            <input id='endereco' value='{{old('endereco')}}' class="form-control @error('endereco')
               is-invalid
             @enderror" 
               name="endereco">
@@ -48,7 +48,7 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Logradouro</label>
-            <input value='{{old('logradouro')}}' class="form-control @error('logradouro')
+            <input id='logradouro' value='{{old('logradouro')}}' class="form-control @error('logradouro')
               is-invalid
             @enderror" 
               name="logradouro">
@@ -58,7 +58,7 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Bairro</label>
-            <input value='{{old('bairro')}}' class="form-control @error('bairro')
+            <input id='bairro' value='{{old('bairro')}}' class="form-control @error('bairro')
               is-invalid
             @enderror" 
               name="bairro">
